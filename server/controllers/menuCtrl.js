@@ -1,4 +1,4 @@
-const menu = require('../menu')
+const menu = require('../../src/components/Menu')
 let id = menu.length+1
 
 module.exports = {
