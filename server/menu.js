@@ -42,3 +42,5 @@ const menu = [
         img: 'https://www.gohebervalley.com/media/Spin16.jpg'
     }
 ]
+
+module.exports = menu

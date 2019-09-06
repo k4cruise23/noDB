@@ -7,7 +7,8 @@ export default class DisplayData extends Component{
         super()
 
         this.state = {
-
+            menu: data,
+            index: 0
         }
     }
 

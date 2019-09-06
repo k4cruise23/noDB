@@ -8,6 +8,9 @@ const staffCtrl = require('./controllers/staffCtrl')
 app.use(express.json())
 
 app.get('/api/menu', menuCtrl.getMenu)
+app.delete('/api/menu/:id', menuCtrl.deleteItem)
+app.post('/api/menu', menuCtrl.addItem)
+app.put('/api/menu/:id', menuCtrl.editItem)
 
 
 app.listen(SERVER_PORT, () => console.log(`${SERVER_PORT} happy customers`))
