@@ -3,7 +3,7 @@ let id = menu.length+1
 
 module.exports = {
     getMenu: (req, res) => {
-        console.log(menu)
+        // console.log(menu)
         res.status(200).send(menu)
     },
     deleteItem: (req, res) => {

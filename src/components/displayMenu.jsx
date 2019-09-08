@@ -82,7 +82,8 @@ export default class DisplayMenu extends Component{
         // console.log(this.state.descriptionInput)
         return(
             <section className='body'>
-                <h3 className="index">{this.state.index+1}</h3>
+                <div className='menuItems'>
+                <div className='text'>
                 <h1 className='item' >{data[index].item}</h1>
                 <h2 className="price">{data[index].price}</h2>
                 {!this.state.toggleEdit ? (
@@ -93,7 +94,11 @@ export default class DisplayMenu extends Component{
                         <textarea onChange={this.handleChange} name="descriptionInput" id="" cols="30" rows="6" defaultValue={data[index].description}></textarea>
                     </div>
                 )}
+                </div>
+                <div className='imgParent'>
                 <img className='img' src={data[index].img} alt="food item"/>
+                </div>
+                </div>
             <Navigation 
             nextFn={this.next}
             previousFn={this.previous}
@@ -107,3 +112,5 @@ export default class DisplayMenu extends Component{
         )
     }
 }
+
+

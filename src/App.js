@@ -3,6 +3,7 @@ import React from 'react';
 import './App.css';
 import DisplayMenu from './components/DisplayMenu'
 import Header from './components/Header'
+import Staff from './components/Staff'
 
 class App extends React.Component {
   render(){
@@ -10,7 +11,7 @@ class App extends React.Component {
     <div className="App">
     <Header />
      <DisplayMenu/>
-     
+     <Staff/>
     </div>
   );
   }

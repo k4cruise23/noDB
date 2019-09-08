@@ -1,10 +1,10 @@
 const menu = [
     {
-        item: 'Classic Spin Burger',
-        price: 13.95,
+        item: "Texas Brisket",
+        price: 19.95,
         id: 1,
-        description: 'House-ground primal-cut Black Angus beef seasoned with fresh rosemary & garlic, topped with caramelized onions, jack cheese, tomatoes & romaine on a potato roll with pickles.',
-        img: 'https://media-cdn.tripadvisor.com/media/photo-s/12/a6/2a/9a/20180415-121719-largejpg.jpg'
+        description: 'Texas-style beef brisket hickory-smoked for 12 hours, served sliced with our fresh Bar-B-Q sauce. Specify lean or marbled. Baked beans & grilled asparagus.',
+        img: 'https://s3-media2.fl.yelpcdn.com/bphoto/unHzOnjzmFlKFbPfT-6VNA/o.jpg'
     },
     {
         item: 'Spin Alredo',
@@ -14,17 +14,17 @@ const menu = [
         img: 'https://s3-media4.fl.yelpcdn.com/bphoto/F_tIkklhHZWbD6mBATF2JA/o.jpg'
     },
     {
-        item: 'Real Onion Rings from Real Onion',
+        item: 'Onion Rings',
         price: 8.75,
         id: 3,
         description: 'Hand-cut & dipped in our light crispy batter. With fresh blue cheese dip.',
-        img: 'https://lh3.googleusercontent.com/QQjyl1emaftJDmC9xJD92QlGcpQihZysWqn-cwgSBJRrXnuVX6FibcD6q2HLutEuDTgr2P3ToAEh61KpeBocyEI=s600-c'
+        img: 'https://i.pinimg.com/originals/7d/12/e7/7d12e7ac088996d686078678a63304d0.jpg'
     },
     {
         item: 'Tami Rice Bowl',
         price: 14.25,
         id: 4,
-        description: 'Organic brown rice, grilled spice-rubbed natural chicken breast, grilled salmon, or a grilled shrimp skewer, organic garbanzos, turmeric-roasted carrots, cherry tomatoes, fresh organic spinach with a Thai tamarind sauce.',
+        description: 'Organic brown rice, grilled spice-rubbed natural chicken breast, organic garbanzos, turmeric-roasted carrots, cherry tomatoes, fresh organic spinach with a Thai tamarind sauce.',
         img: 'http://tdr.aaa.com/tdr-images/variation/294360?ratio=9:6&rwidth=500'
     },
     {
