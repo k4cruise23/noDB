@@ -3,6 +3,7 @@ let id = menu.length+1
 
 module.exports = {
     getMenu: (req, res) => {
+        console.log(menu)
         res.status(200).send(menu)
     },
     deleteItem: (req, res) => {
@@ -10,6 +11,8 @@ module.exports = {
         const index = menu.findIndex(el => el.id === +id)
         menu.splice(index, 1)
         res.status(200).send(menu)
+        console.log(menu)
+
     },
     addItem: (req, res) => {
         let {item, id, img, description, price} = req.body

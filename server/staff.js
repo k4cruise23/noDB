@@ -1,5 +1,2 @@
-const servers = ['Katie', 'Shay', 'Marcela', 'Lacey', 'Corbin', 'Ash', 'Jessica', 'Brennan']
+const staff = ['Katie', 'Shay', 'Marcela', 'Lacey', 'Corbin', 'Ash', 'Jessica', 'Brennan', 'Angel', 'Duncan', 'Vincent', 'Joline', 'Ericka']
 
-const bussers = ['Duncan', 'Angel', 'Gabby', 'Edwin']
-
-const counter = ['Vincent', 'Joline', 'Shay', 'Marcela', 'Ericka']

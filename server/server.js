@@ -7,6 +7,8 @@ const staffCtrl = require('./controllers/staffCtrl')
 
 app.use(express.json())
 
+// app.get('/api/staff', staffCtrl.getStaff)
+
 app.get('/api/menu', menuCtrl.getMenu)
 app.delete('/api/menu/:id', menuCtrl.deleteItem)
 app.post('/api/menu', menuCtrl.addItem)

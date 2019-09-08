@@ -10,45 +10,97 @@ export default class DisplayMenu extends Component{
 
         this.state = {
             data: data,
-            index: 0
+            index: 0,
+            id: 0,
+            toggleEdit: false,
+            descriptionInput: ''
         }
+        this.previous = this.previous.bind(this)
+        this.next = this.next.bind(this)
+        this.deleteMenuItem = this.deleteMenuItem.bind(this)
+        this.toggle = this.toggle.bind(this)
+        this.handleChange = this.handleChange.bind(this)
     }
 
     componentDidMount(){
         axios.get('/api/menu').then(res => {
-            this.setState({menu: res.data})
+            this.setState({data: res.data})
         })
     }
 
     addMenuItem(body) {
         axios.post('/api/menu', body).then(res => {
-            this.setState({menu: res.data})
+            this.setState({data: res.data})
         })
     }
 
     deleteMenuItem(id) {
-        axios.delete(`api/menu/${id}`).then(res => {
-            this.setState({menu: res.data})
+        // console.log(id)
+        axios.delete(`/api/menu/${id}`).then(res => {
+            // console.log(res.data)
+            this.setState({data: res.data})
         })
     }
 
-    editMenuItem(id, body) {
-        axios.put(`/api/menu/${id}`, body).then(res => {
-            this.setState({menu: res.data})
+    editMenuItem(id) {
+        const {descriptionInput} = this.state
+        axios.put(`/api/menu/${id}`, {description: descriptionInput}).then(res => {
+            this.setState({data: res.data})
         })
+    }
+
+    previous = () => {
+        if(this.state.index === 0){
+            this.setState({index: 5})
+            return
+        }
+        this.setState({index: this.state.index-1})
+    }
+
+    next = () => {
+        if(this.state.index === 5){
+            this.setState({index: 0})
+            return
+        }
+        this.setState({index: this.state.index+1})
+    }
+
+    toggle() {
+        const{data, index} = this.state
+        this.setState(prevState => ({toggleEdit: !prevState.toggleEdit}))
+        this.editMenuItem(data[index].id)
+    }
+
+    handleChange(e) {
+        this.setState({[e.target.name]: e.target.value})
     }
 
 
     render(){
         const{data, index} = this.state
+        console.log(this.state.descriptionInput)
         return(
             <section className='body'>
-            <Navigation />
                 <h3 className="index">{this.state.index+1}</h3>
                 <h1 className='item' >{data[index].item}</h1>
                 <h2 className="price">{data[index].price}</h2>
-                <h2 className="description">{data[index].description}</h2>
+                {!this.state.toggleEdit ? (
+                    <h2 className="description">{data[index].description}</h2> 
+                    
+                ) : (
+                    <div>
+                        <textarea onChange={this.handleChange} name="descriptionInput" id="" cols="30" rows="6" defaultValue={data[index].description}></textarea>
+                    </div>
+                )}
                 <img src={data[index].img} alt="food item"/>
+            <Navigation 
+            nextFn={this.next}
+            previousFn={this.previous}
+            deleteFn={this.deleteMenuItem}
+            id = {data[index].id }
+            toggle = {this.toggle}
+            handleChange = {this.handleChange}
+            toggleEdit = {this.state.toggleEdit}/>
             </section>
         )
     }
