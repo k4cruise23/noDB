@@ -26,10 +26,10 @@ export default class Navigation extends Component{
         return(
             <section className='navigation'>
                 <div className="addInputs">
-                    <input onChange={this.handleChange} name='item' type="text" value={this.state.item}/>
-                    <input onChange={this.handleChange} name='price' type="number"/>
-                    <input onChange={this.handleChange} name='description' type="text"/>
-                    <input onChange={this.handleChange} name='img' type="text"/>
+                    <input onChange={this.handleChange} name='item' type="text" autoComplete='off' value={this.state.item}/>
+                    <input onChange={this.handleChange} name='price' type="number" autoComplete='off'/>
+                    <input onChange={this.handleChange} name='description' type="text" autoComplete='off'/>
+                    <input onChange={this.handleChange} name='img' type="text" autoComplete='off'/>
                 </div>
                 <div className='buttons'>
                 <button className="previous" onClick={() => this.props.previousFn()} >Previous</button>

@@ -1,5 +1,5 @@
-const menu = require('../../src/components/Menu')
-let id = menu.length+1
+const menu = require("../../src/components/Menu.js")
+
 
 module.exports = {
     getMenu: (req, res) => {
