@@ -15,6 +15,7 @@ module.exports = {
 
     },
     addItem: (req, res) => {
+        console.log(req.body)
         let {item, id, img, description, price} = req.body
         menu.push({...req.body, item, price, id, description, img})
         id++

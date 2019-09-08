@@ -5,30 +5,40 @@ export default class Navigation extends Component{
     constructor(){
         super()
         this.state = {
-
+            item: '',
+            price: 0,
+            description: '',
+            img: ''
         }
     }
 
-    // toggle() {
-    //     this.setState(prevState => ({toggleEdit: !prevState.toggleEdit}))
-    // }
+    handleChange = e => {
+        //what are the brackets for?
+        this.setState({[e.target.name]: e.target.value})
+    }
 
-    // handleChange(e) {
-    //     this.setState({descriptionInput: e.target.value})
-    // }
+
 
 
     render(){
         // console.log(this.props)
-        console.log(this.props.toggleEdit)
+        // console.log(this.props.toggleEdit)
         return(
-            <div className="buttons">
+            <section className='navigation'>
+                <div className="add">
+                    <input onChange={this.handleChange} name='item' type="text"/>
+                    <input onChange={this.handleChange} name='price' type="number"/>
+                    <input onChange={this.handleChange} name='description' type="text"/>
+                    <input onChange={this.handleChange} name='img' type="text"/>
+                </div>
+                <div className='buttons'>
                 <button className="previous" onClick={() => this.props.previousFn()} >Previous</button>
-                <button className="add"  >Add</button>
+                <button className="add" onClick={() => this.props.addMenuItem(this.state)} >Add</button>
                 <button className="edit" onClick={() => this.props.toggle()} >Edit</button>
                 <button className="delete" onClick={() => this.props.deleteFn(this.props.id)} >Delete</button>
                 <button className="next" onClick={() => this.props.nextFn()} >Next</button>
-            </div>
+                </div>
+            </section>
         )
     }
 }

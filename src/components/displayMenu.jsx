@@ -20,6 +20,7 @@ export default class DisplayMenu extends Component{
         this.deleteMenuItem = this.deleteMenuItem.bind(this)
         this.toggle = this.toggle.bind(this)
         this.handleChange = this.handleChange.bind(this)
+        this.addMenuItem = this.addMenuItem.bind(this)
     }
 
     componentDidMount(){
@@ -78,7 +79,7 @@ export default class DisplayMenu extends Component{
 
     render(){
         const{data, index} = this.state
-        console.log(this.state.descriptionInput)
+        // console.log(this.state.descriptionInput)
         return(
             <section className='body'>
                 <h3 className="index">{this.state.index+1}</h3>
@@ -92,7 +93,7 @@ export default class DisplayMenu extends Component{
                         <textarea onChange={this.handleChange} name="descriptionInput" id="" cols="30" rows="6" defaultValue={data[index].description}></textarea>
                     </div>
                 )}
-                <img src={data[index].img} alt="food item"/>
+                <img className='img' src={data[index].img} alt="food item"/>
             <Navigation 
             nextFn={this.next}
             previousFn={this.previous}
@@ -100,7 +101,8 @@ export default class DisplayMenu extends Component{
             id = {data[index].id }
             toggle = {this.toggle}
             handleChange = {this.handleChange}
-            toggleEdit = {this.state.toggleEdit}/>
+            toggleEdit = {this.state.toggleEdit}
+            addMenuItem={this.addMenuItem}/>
             </section>
         )
     }
