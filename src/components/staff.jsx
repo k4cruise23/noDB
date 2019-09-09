@@ -3,7 +3,9 @@ import React from 'react'
 export default function Staff(){
     return(
         <section className='selectStaff'>
+            <div className='staffH'>
             <h1>Select your staff!</h1>
+            </div>
                 <div className="selectors">
                     <select className="server">
                         <option>Server</option>

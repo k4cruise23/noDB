@@ -11,15 +11,16 @@ module.exports = {
         const index = menu.findIndex(el => el.id === +id)
         menu.splice(index, 1)
         res.status(200).send(menu)
-        console.log(menu)
-
+        // console.log(menu)
+        // id deconstructed set to req.params. index is finding the menu index and adding 1. splices specific index, and sends back result
     },
     addItem: (req, res) => {
-        console.log(req.body)
+        // console.log(req.body)
         let {item, id, img, description, price} = req.body
         menu.push({...req.body, item, price, id, description, img})
         id++
         res.status(200).send(menu)
+        // 
     },
     editItem: (req, res) => {
         const {id} = req.params

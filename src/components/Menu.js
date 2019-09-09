@@ -35,9 +35,16 @@ const menu = [
         img: 'https://images.happycow.net/venues/1024/50/41/hcmp50410_329777.jpeg'
     },
     {
+        item: 'Sweet & Spicy Smoked Wings',
+        price: 12.75,
+        id: 6,
+        description: 'Hickory-smoked, not fried, dipped in our sweet & spicy sauce. Fresh real blue cheese dip & raw veggies. Half dozen.',
+        img: 'https://s3-media4.fl.yelpcdn.com/bphoto/ixNWEokt_7o2LIVLZfxomQ/o.jpg'
+    },
+    {
         item: 'GELATO!',
         price: 4.95,
-        id: 6,
+        id: 8,
         description: "Gelato is the most delicious ice cream you will ever eat. It’s Italy’s version of ice cream, but it’s now loved all over the world.",
         img: 'https://www.gohebervalley.com/media/Spin16.jpg'
     }

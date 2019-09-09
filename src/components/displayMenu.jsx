@@ -28,6 +28,7 @@ export default class DisplayMenu extends Component{
             this.setState({data: res.data})
         })
     }
+    //componentDidMount displays the data as soon as the page loads
 
     addMenuItem(body) {
         axios.post('/api/menu', body).then(res => {
@@ -52,14 +53,14 @@ export default class DisplayMenu extends Component{
 
     previous = () => {
         if(this.state.index === 0){
-            this.setState({index: 5})
+            this.setState({index: 6})
             return
         }
         this.setState({index: this.state.index-1})
     }
 
     next = () => {
-        if(this.state.index === 5){
+        if(this.state.index === 6){
             this.setState({index: 0})
             return
         }
@@ -80,6 +81,7 @@ export default class DisplayMenu extends Component{
     render(){
         const{data, index} = this.state
         // console.log(this.state.descriptionInput)
+        //ternary: if toggle edit is not true, display description. Else return text area input and change description
         return(
             <section className='body'>
                 <div className='menuItems'>
@@ -91,7 +93,7 @@ export default class DisplayMenu extends Component{
                     
                 ) : (
                     <div>
-                        <textarea onChange={this.handleChange} name="descriptionInput" id="" cols="30" rows="6" defaultValue={data[index].description}></textarea>
+                        <textarea onChange={this.handleChange} name="descriptionInput" id="" cols="50" rows="6" defaultValue={data[index].description}></textarea>
                     </div>
                 )}
                 </div>
@@ -110,6 +112,7 @@ export default class DisplayMenu extends Component{
             addMenuItem={this.addMenuItem}/>
             </section>
         )
+        //Navigation is having all the functions passed down as props '<Navigation />'
     }
 }
 
