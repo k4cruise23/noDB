@@ -71,17 +71,19 @@ export default class DisplayMenu extends Component{
         const{data, index} = this.state
         this.setState(prevState => ({toggleEdit: !prevState.toggleEdit}))
         this.editMenuItem(data[index].id)
+        //
     }
 
     handleChange(e) {
         this.setState({[e.target.name]: e.target.value})
+        // input function 
     }
 
 
     render(){
         const{data, index} = this.state
         // console.log(this.state.descriptionInput)
-        //ternary: if toggle edit is not true, display description. Else return text area input and change description
+        // ternary: if toggle edit is not true, display description. Else return text area input and change description
         return(
             <section className='body'>
                 <div className='menuItems'>
@@ -93,7 +95,7 @@ export default class DisplayMenu extends Component{
                     
                 ) : (
                     <div>
-                        <textarea onChange={this.handleChange} name="descriptionInput" id="" cols="50" rows="6" defaultValue={data[index].description}></textarea>
+                        <textarea onChange={this.handleChange} name="descriptionInput" id="" cols="40" rows="6" defaultValue={data[index].description}></textarea>
                     </div>
                 )}
                 </div>
