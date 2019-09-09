@@ -53,14 +53,15 @@ export default class DisplayMenu extends Component{
 
     previous = () => {
         if(this.state.index === 0){
-            this.setState({index: 6})
+            this.setState({index: data.length-1})
             return
         }
         this.setState({index: this.state.index-1})
     }
+    //buttons break when the index is less or more than the set length of the array. need to fix
 
     next = () => {
-        if(this.state.index === 6){
+        if(this.state.index === data.length-1){
             this.setState({index: 0})
             return
         }
@@ -71,7 +72,7 @@ export default class DisplayMenu extends Component{
         const{data, index} = this.state
         this.setState(prevState => ({toggleEdit: !prevState.toggleEdit}))
         this.editMenuItem(data[index].id)
-        //
+        //descontructing data and index and setting it to this.state
     }
 
     handleChange(e) {

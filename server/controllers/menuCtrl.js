@@ -20,7 +20,8 @@ module.exports = {
         menu.push({...req.body, item, price, id, description, img})
         id++
         res.status(200).send(menu)
-        // 
+        // decontructing all the keys and assigning them to req.body. spreading req.body and pushing new info back into the array.
+        //addibg a new id
     },
     editItem: (req, res) => {
         const {id} = req.params
@@ -28,5 +29,8 @@ module.exports = {
         const index = menu.findIndex(el => el.id === +id)
         menu[index].description = description
         res.status(200).send(menu)
+        //deconstructing id and assigning to req.params
+        //deconstructing description and setting it to req.body
+        //finding index of item where edit is used and giving new description. sending it back
     }
 }
